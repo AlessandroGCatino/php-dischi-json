@@ -18,7 +18,7 @@
         </header>
         <main>
             <div class="container d-flex flex-wrap gap-3 p-5">
-                <div v-for="(element, index) in library" :key="index" class="disc">
+                <div v-for="(element, index) in library" :key="index" class="disc" @click="setPrimary(index)">
                     <figure>
                         <img :src="element.poster" alt="">
                     </figure>
@@ -28,9 +28,21 @@
                     <small>{{element.author}}</small>
 
                     <strong>{{element.year}}</strong>
-
                 </div>
+            </div>
+            <div v-if="bigPicture != 'null'" class="big-disc">
+                <div class="close" @click="setPrimary('null')">
+                    &cross;
+                </div>
+                <figure>
+                    <img :src="library[bigPicture].poster" alt="">
+                </figure>
 
+                <strong>{{library[bigPicture].title}}</strong>
+
+                <small>{{library[bigPicture].author}}</small>
+
+                <strong>{{library[bigPicture].year}}</strong>
             </div>
 
         </main>

@@ -5,6 +5,7 @@ createApp({
     return {
       apiURl: "server.php",
       library: [],
+      bigPicture : "null",
     }
   },
   mounted(){
@@ -17,8 +18,9 @@ createApp({
         .then((response) => {
           this.library = response.data
         })
-
-
+    },
+    setPrimary(index){
+      this.bigPicture = index
     }
 
   }

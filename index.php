@@ -17,9 +17,17 @@
             </figure>
         </header>
         <main>
-            <div class="container d-flex flex-wrap">
+            <div class="container d-flex flex-wrap gap-3 p-5">
                 <div v-for="(element, index) in library" :key="index" class="disc">
-                    {{element}}
+                    <figure>
+                        <img :src="element.poster" alt="">
+                    </figure>
+
+                    <strong>{{element.title}}</strong>
+
+                    <small>{{element.author}}</small>
+
+                    <strong>{{element.year}}</strong>
 
                 </div>
 
